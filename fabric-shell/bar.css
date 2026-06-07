@@ -148,3 +148,23 @@
   border-color: rgba(30, 175, 196, 0.55);
   color: #0d1115;
 }
+
+#lock-button {
+  background-color: rgba(49, 50, 68, 0.65);
+  color: #d9d5c3;
+  border-radius: 999px;
+  padding: 4px 12px;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+#lock-button:hover {
+  background-color: rgba(30, 175, 196, 0.28);
+  color: #8ccbd2;
+}
+
+#lock-button:active {
+  background-color: rgba(215, 111, 74, 0.85);
+  color: #071015;
+}

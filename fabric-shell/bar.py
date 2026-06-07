@@ -11,6 +11,8 @@ from fabric.hyprland.widgets import (
 from gi.repository import GLib
 from pathlib import Path
 from fabric.widgets.label import Label
+from fabric.widgets.button import Button
+from fabric.utils import exec_shell_command_async
 
 class Battery(Label):
     def __init__(self):
@@ -134,6 +136,9 @@ class AnimatedWorkspaceButton(WorkspaceButton):
         ctx.remove_class("switching-out")
         return GLib.SOURCE_REMOVE
 
+def lock_screen(*_):
+    print("LOCK BUTTON CLICKED")
+    exec_shell_command_async(["bash", "-lc", "pidof hyprlock >/dev/null || hyprlock"])
 
 class StatusBar(Window):
     def __init__(self):
@@ -176,13 +181,17 @@ class StatusBar(Window):
                 spacing=8,
                 children=[
                     DateTime(name="clock"),
-                    Battery()
+                    Battery(),
+                    Button(
+                        name="lock-button",
+                        child=Label(label=""),
+                        on_clicked=lock_screen,
+                    ),
                 ],
             ),
         )
 
         self.show_all()
-
 
 if __name__ == "__main__":
     bar = StatusBar()
