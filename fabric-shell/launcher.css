@@ -1,0 +1,154 @@
+/* Fortress / siege wallpaper palette
+   Fix: GTK/Fabric theme backgrounds are explicitly disabled so fields stay
+   dark + transparent instead of being painted white by the default theme.
+*/
+
+#launcher {
+  background-color: transparent;
+  font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
+  font-size: 16px;
+}
+
+/* Wichtig gegen weiße GTK-Theme-Flächen */
+#launcher,
+#launcher * {
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#launcher-inner {
+  background-color: rgba(10, 18, 24, 0.94);
+  border: 2px solid rgba(30, 175, 196, 0.58);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+/* Scrollbereich/Viewport transparent halten */
+#launcher scrolledwindow,
+#launcher viewport,
+#launcher undershoot,
+#launcher overshoot {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+}
+
+/* Suchfeld */
+#search,
+entry#search {
+  background-color: rgba(21, 38, 48, 0.88);
+  background-image: none;
+  color: #d9d3c8;
+  caret-color: #f0eadf;
+
+  border: 1px solid rgba(111, 126, 132, 0.36);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-size: 18px;
+
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+#search text,
+entry#search text {
+  background-color: transparent;
+  color: #d9d3c8;
+}
+
+#search placeholder,
+entry#search placeholder {
+  color: rgba(217, 211, 200, 0.62);
+}
+
+#search:focus,
+entry#search:focus {
+  background-color: rgba(27, 51, 64, 0.94);
+  background-image: none;
+  border-color: rgba(30, 175, 196, 0.72);
+  color: #f0eadf;
+}
+
+#search selection,
+entry#search selection {
+  background-color: rgba(30, 175, 196, 0.42);
+  color: #f0eadf;
+}
+
+/* App-Buttons / Cards */
+#app,
+button#app {
+  background-color: rgba(43, 73, 86, 0.52);
+  background-image: none;
+  color: #d9d3c8;
+
+  border: 1px solid rgba(111, 126, 132, 0.22);
+  border-radius: 14px;
+  padding: 10px 14px;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    padding 180ms ease,
+    opacity 180ms ease;
+}
+
+#app label,
+button#app label {
+  color: #d9d3c8;
+}
+
+#app:hover,
+#app:focus,
+button#app:hover,
+button#app:focus {
+  background-color: rgba(30, 175, 196, 0.24);
+  background-image: none;
+  border-color: rgba(30, 175, 196, 0.58);
+  color: #f0eadf;
+  padding: 10px 18px;
+}
+
+#app:hover label,
+#app:focus label,
+button#app:hover label,
+button#app:focus label {
+  color: #f0eadf;
+}
+
+#app:active,
+button#app:active {
+  background-color: rgba(216, 116, 62, 0.72);
+  background-image: none;
+  border-color: rgba(255, 163, 93, 0.72);
+  color: #0d1115;
+}
+
+#app:active label,
+button#app:active label {
+  color: #0d1115;
+}
+
+/* Scrollbar passend dunkel/transparenter */
+#launcher scrollbar,
+#launcher scrollbar trough {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+}
+
+#launcher scrollbar slider {
+  background-color: rgba(111, 126, 132, 0.38);
+  background-image: none;
+  border-radius: 999px;
+  min-width: 8px;
+  min-height: 8px;
+}
+
+#launcher scrollbar slider:hover {
+  background-color: rgba(30, 175, 196, 0.48);
+}

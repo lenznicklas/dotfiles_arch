@@ -6,9 +6,18 @@ hl.config({
 	input = {
 		kb_layout = "de",
 	},
+	general = {
+		border_size = 3,
+		col = {
+			active_border = "rgba(1eafc4dd)",
+			inactive_border = "rgba(1eafc466)",
+		},
+	},
+	decoration = {
+		rounding = 12,
+	},
 })
 
--- exec once
 hl.on("hyprland.start", function()
-	hl.exec_cmd("waybar")
+	hl.exec_cmd("hyprpaper")
 end)
