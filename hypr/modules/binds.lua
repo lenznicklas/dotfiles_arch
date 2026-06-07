@@ -47,3 +47,16 @@ for i = 1, 9 do
 	hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = tostring(i) }))
 	hl.bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = tostring(i) }))
 end
+
+-- move focus
+hl.bind("SUPER + H", hl.dsp.focus({ direction = "l" }))
+hl.bind("SUPER + J", hl.dsp.focus({ direction = "d" }))
+hl.bind("SUPER + K", hl.dsp.focus({ direction = "u" }))
+hl.bind("SUPER + L", hl.dsp.focus({ direction = "r" }))
+
+
+-- move window 
+hl.bind("SUPER + SHIFT + H", hl.dsp.window.move({ direction = "l" }))
+hl.bind("SUPER + SHIFT + J", hl.dsp.window.move({ direction = "d" }))
+hl.bind("SUPER + SHIFT + K", hl.dsp.window.move({ direction = "u" }))
+hl.bind("SUPER + SHIFT + L", hl.dsp.window.move({ direction = "r" }))
