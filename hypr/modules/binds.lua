@@ -1,12 +1,16 @@
 -- BINDS
 local terminal = "kitty"
 local browser = "firefox"
-local launcher = "cd /home/lenz/.config/fabric-shell && source .venv/bin/activate 2>/dev/null || true; GDK_BACKEND=wayland python launcher.py"
+local launcher = "quickshell:launcher"
 
 -- open programs
 hl.bind("SUPER + Return", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + F", hl.dsp.exec_cmd(browser))
-hl.bind("SUPER + SPACE", hl.dsp.exec_cmd(launcher)) 
+hl.bind("SUPER + SPACE", hl.dsp.global("quickshell:launcher"))
+hl.bind("SUPER + N", hl.dsp.global("quickshell:notes"))
+hl.bind("SUPER + W", function()
+	hl.exec_cmd("bash -lc '~/.local/bin/walltheme'")
+end)
 
 -- volume/brightness
 hl.bind(

@@ -1,4 +1,5 @@
 import Quickshell
+import Quickshell.Hyprland
 import Quickshell.Io
 import QtQuick
 
@@ -19,6 +20,18 @@ ShellRoot {
   Process {
     id: lockProc
     command: ["bash", "-lc", "pidof hyprlock >/dev/null || hyprlock"]
+  }
+
+  Launcher {
+    id: launcher
+    targetScreen: Quickshell.screens.length > 0 ? Quickshell.screens[0] : null
+    theme: appTheme
+  }
+
+  GlobalShortcut {
+    name: "launcher"
+    description: "Toggle launcher"
+    onPressed: launcher.toggle()
   }
 
   Variants {

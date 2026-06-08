@@ -7,7 +7,7 @@ Rectangle {
   property string timeText: "--:--"
 
   width: clockText.implicitWidth + 32
-  height: 28
+  height: theme.chipHeight
   radius: 999
   color: Qt.rgba(7 / 255, 16 / 255, 21 / 255, 0.62)
   border.width: 1
@@ -15,6 +15,7 @@ Rectangle {
 
   Text {
     id: clockText
+
     anchors.centerIn: parent
     text: chip.timeText
     color: theme.text

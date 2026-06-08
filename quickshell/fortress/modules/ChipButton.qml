@@ -7,7 +7,7 @@ Rectangle {
   property alias text: label.text
   signal clicked()
 
-  height: 28
+  height: theme.chipHeight
   radius: 999
   color: mouse.containsMouse ? Qt.rgba(30 / 255, 175 / 255, 196 / 255, 0.28) : theme.muted
 
@@ -17,6 +17,7 @@ Rectangle {
 
   Text {
     id: label
+
     anchors.centerIn: parent
     color: mouse.pressed ? theme.bg : mouse.containsMouse ? theme.accentSoft : theme.text
     font.family: theme.fontName
@@ -26,6 +27,7 @@ Rectangle {
 
   MouseArea {
     id: mouse
+
     anchors.fill: parent
     hoverEnabled: true
     cursorShape: Qt.PointingHandCursor

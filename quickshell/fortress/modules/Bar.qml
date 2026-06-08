@@ -10,7 +10,7 @@ PanelWindow {
 
   color: "transparent"
   implicitHeight: theme.barHeight
-  exclusiveZone: theme.barHeight + theme.barMarginTop + 4
+  exclusiveZone: theme.barHeight + theme.barMarginTop - 14
 
   anchors {
     top: true
@@ -26,6 +26,7 @@ PanelWindow {
 
   Rectangle {
     id: bar
+
     anchors.fill: parent
     color: theme.panel
     radius: theme.barRadius
@@ -34,6 +35,7 @@ PanelWindow {
 
     Row {
       id: leftModules
+
       anchors.left: parent.left
       anchors.leftMargin: theme.barPaddingHorizontal
       anchors.verticalCenter: parent.verticalCenter
@@ -52,6 +54,7 @@ PanelWindow {
 
     Row {
       id: rightModules
+
       anchors.right: parent.right
       anchors.rightMargin: theme.barPaddingHorizontal
       anchors.verticalCenter: parent.verticalCenter

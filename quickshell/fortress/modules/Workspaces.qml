@@ -19,8 +19,8 @@ Row {
         const isFocused = ws.id === focusedId || ws.focused;
         const hasWindows = ws.toplevels !== null && ws.toplevels.values.length > 0;
 
-        // Show occupied workspaces and always show the currently active one,
-        // even when it is empty.
+        // Show occupied workspaces and always show the active one,
+        // even if it is currently empty.
         return isFocused || hasWindows;
       })
       .sort(function(a, b) { return a.id - b.id; });
@@ -56,6 +56,7 @@ Row {
 
       SequentialAnimation {
         id: pulseAnimation
+
         ScriptAction { script: wsButton.pulse = true }
         PauseAnimation { duration: 170 }
         ScriptAction { script: wsButton.pulse = false }
@@ -76,13 +77,12 @@ Row {
       }
 
       Behavior on color {
-        ColorAnimation {
-          duration: 180
-        }
+        ColorAnimation { duration: 180 }
       }
 
       MouseArea {
         id: mouse
+
         anchors.fill: parent
         cursorShape: Qt.PointingHandCursor
         hoverEnabled: true
