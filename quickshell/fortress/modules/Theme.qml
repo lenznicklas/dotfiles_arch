@@ -34,4 +34,8 @@ QtObject {
   property int launcherRowHeight: 42
   property int launcherMaxResults: 6
   property int launcherTopGap: 8
+
+  // Notes geometry
+  property int notesWidth: 620
+  property int notesHeight: 360
 }

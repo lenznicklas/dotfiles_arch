@@ -22,8 +22,14 @@ ShellRoot {
     command: ["bash", "-lc", "pidof hyprlock >/dev/null || hyprlock"]
   }
 
-  Launcher {
+    Launcher {
     id: launcher
+    targetScreen: Quickshell.screens.length > 0 ? Quickshell.screens[0] : null
+    theme: appTheme
+  }
+
+  Notes {
+    id: notes
     targetScreen: Quickshell.screens.length > 0 ? Quickshell.screens[0] : null
     theme: appTheme
   }
@@ -32,6 +38,12 @@ ShellRoot {
     name: "launcher"
     description: "Toggle launcher"
     onPressed: launcher.toggle()
+  }
+
+  GlobalShortcut {
+    name: "notes"
+    description: "Toggle notes"
+    onPressed: notes.toggle()
   }
 
   Variants {
